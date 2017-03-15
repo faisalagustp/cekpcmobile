@@ -21,14 +21,14 @@
         android:layout_marginTop="88dp" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Aplikasi Pelaporan Inventaris"
-        android:id="@+id/textView"
-        android:autoText="false"
-        android:layout_marginTop="20dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autoText="false"
+        android:text="Aplikasi Pelaporan PC"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold" />
 </RelativeLayout>
