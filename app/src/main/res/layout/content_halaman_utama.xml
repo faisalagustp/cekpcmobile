@@ -9,13 +9,15 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_halaman_utama" tools:context=".HalamanUtama">
 
-    <TextView android:text="Silakan scan barcode inventaris anda dengan tap pada tombol kamera dibawah" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
         android:id="@+id/TopText"
-        android:layout_below="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp" />
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="17dp"
+        android:text="Silakan scan barcode inventaris anda dengan tap pada tombol kamera dibawah, atau dengan mengisikan kode PC pada kolom dibawah" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,4 +29,37 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/barcodeET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/TopText"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_toStartOf="@+id/tombolCari" />
+
+    <Button
+        android:id="@+id/tombolCari"
+        style="@android:style/Widget.Material.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/barcodeET"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/barcodeET"
+        android:text="Cari" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/barcodeET"
+        android:layout_marginTop="13dp"
+        android:textColor="@android:color/holo_red_dark" />
 </RelativeLayout>

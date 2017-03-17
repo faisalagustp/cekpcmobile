@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -54,6 +55,19 @@ public class HalamanUtama extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
+
+        Button tombol = (Button) findViewById(R.id.tombolCari);
+        tombol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tv = (TextView) findViewById(R.id.errorMessage);
+                tv.setText("");
+                EditText barcode = (EditText) findViewById(R.id.barcodeET);
+                String[] input = new String[1];
+                input[0] = barcode.getText().toString();
+                new HalamanUtamaTask(getApplicationContext()).execute(input);
+            }
+        });
     }
 
     @Override
@@ -61,13 +75,17 @@ public class HalamanUtama extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
             if(result.getContents() == null) {
-                TextView tv = (TextView) findViewById(R.id.TopText);
-                tv.setText("Barcode tidak terbaca. Silakan scan barcode inventaris anda dengan tap pada tombol kamera dibawah");
+                TextView tv = (TextView) findViewById(R.id.errorMessage);
+                tv.setText("Barcode tidak terbaca. Silakan scan kembali");
             } else {
                 //cek di API, barcode ada atau nggak
                 Context context = getApplicationContext();
                 String[] input = new String[1];
                 input[0] = result.getContents();
+                EditText et = (EditText) findViewById(R.id.barcodeET);
+                et.setText(result.getContents());
+                TextView tv = (TextView) findViewById(R.id.errorMessage);
+                tv.setText("");
                 new HalamanUtamaTask(context).execute(input);
             }
         } else {
@@ -138,9 +156,9 @@ public class HalamanUtama extends AppCompatActivity {
 
         protected void onPostExecute(JSONObject hasil) {
             loadingMessage.dismiss();
-            TextView tv = (TextView) findViewById(R.id.TopText);
+            TextView tv = (TextView) findViewById(R.id.errorMessage);
             if(hasil == null){
-                tv.setText("Barcode tidak valid. Silakan scan barcode inventaris anda dengan tap pada tombol kamera dibawah");
+                tv.setText("Barcode tidak dikenali oleh sistem.");
             }else{
                 try {
                     if(hasil.getBoolean("status")==false){
@@ -149,12 +167,15 @@ public class HalamanUtama extends AppCompatActivity {
                         intent.putExtra("namaInventaris",hasil.getString("nama"));
                         intent.putExtra("jenisInventaris",hasil.getString("jenis"));
                         intent.putExtra("lokasiInventaris",hasil.getString("lokasi"));
+                        intent.putExtra("defaultLaporan",hasil.getJSONArray("defaultLaporan").toString());
+                        intent.putExtra("pilihanLokasi",hasil.getJSONArray("pilihanLokasi").toString());
                         startActivity(intent);
                     }else{
-                        tv.setText("Barcode tidak ada di sistem. Silakan scan barcode inventaris anda dengan tap pada tombol kamera dibawah");
+                        tv.setText("Barcode tidak dikenali oleh sistem.");
                     }
                 }catch (Exception e){
-                    tv.setText("Barcode tidak ada di sistem. Silakan scan barcode inventaris anda dengan tap pada tombol kamera dibawah");
+                    tv.setText("Barcode tidak dikenali oleh sistem.");
+                    e.printStackTrace();
                 }
             }
         }

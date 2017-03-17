@@ -30,6 +30,7 @@ import com.google.zxing.common.StringUtils;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -51,7 +52,6 @@ public class HalamanDetail extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-
         pref = getApplicationContext().getSharedPreferences("login", 0);
         this.context = getApplicationContext();
 
@@ -60,18 +60,70 @@ public class HalamanDetail extends AppCompatActivity {
         tv.setText(myIntent.getStringExtra("barcodeNumber"));
         tv = (TextView) findViewById(R.id.nama_inventaris);
         tv.setText(myIntent.getStringExtra("namaInventaris") + "("+myIntent.getStringExtra("jenisInventaris")+")");
-        tv = (TextView) findViewById(R.id.lokasi);
-        tv.setText(myIntent.getStringExtra("lokasiInventaris"));
+        try {
+            JSONArray arrayLokasi = new JSONArray(myIntent.getStringExtra("pilihanLokasi"));
+            List<String> opsi = new ArrayList<String>();
+            int indexTerpilih = 0;
+            for (int j = 0; j < arrayLokasi.length(); j++) {
+                if(arrayLokasi.getString(j).equals(myIntent.getStringExtra("lokasiInventaris"))){
+                    indexTerpilih = j;
+                }
+                opsi.add(arrayLokasi.getString(j));
+
+            }
+            String pilihanLokasi[] = new String[opsi.size()];
+            opsi.toArray(pilihanLokasi);
+
+            Spinner sp = (Spinner) findViewById(R.id.lokasi);
+            ArrayAdapter<String> spinnerArrayAdapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pilihanLokasi);
+            spinnerArrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+            sp.setAdapter(spinnerArrayAdapter1);
+            sp.setSelection(indexTerpilih);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        String defaultLaporan = myIntent.getStringExtra("defaultLaporan");
+        try {
+            JSONArray ja = new JSONArray(defaultLaporan);
+            for(int i=0; i<ja.length(); i++){
+                JSONObject jo = ja.getJSONObject(i);
+                //cek ada atau tidak id dengan jenis itu
+                int resID = getResources().getIdentifier("spinner"+jo.getString("jenis"), "id", getPackageName());
+                JSONArray item = jo.getJSONArray("item");
+                if(resID==0){
+                    this.addNewJenis(jo.getString("jenis"),item);
+                }else{
+                    //edit elemen yang ada
+                    Spinner sp1 = (Spinner) findViewById(resID);
+                    List<String> opsi = new ArrayList<String>();
+                    for(int j=0; j<item.length();j++){
+                        opsi.add(item.getJSONObject(j).getInt("skor") + ". " + item.getJSONObject(j).getString("keterangan"));
+                    }
+                    String options[] = new String[ opsi.size() ];
+                    opsi.toArray( options );
+
+                    ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, options);
+                    spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                    sp1.setAdapter(spinnerArrayAdapter);
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
 
         Button laporkan = (Button) findViewById(R.id.laporkan);
+        final Spinner lokasi = (Spinner) findViewById(R.id.lokasi);
         laporkan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] param = new String[3];
+                String[] param = new String[4];
                 TextView tv = (TextView) findViewById(R.id.barcode);
                 if(pref.getInt("userId",0) != 0){
                     param[0] = Integer.toString(pref.getInt("userId",0));
                     param[1] = tv.getText().toString();
+                    param[3] = lokasi.getSelectedItem().toString();
                     param[2] = "[";
 
                     String[] target = {"Keyboard","Mouse","Monitor","Windows"};
@@ -120,23 +172,7 @@ public class HalamanDetail extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         try {
                             String textnya = input.getText().toString();
-                            tambahan.add(textnya);
-                            LinearLayout container = (LinearLayout) findViewById(R.id.Tambahable);
-
-                            TextView txt1 = (TextView) findViewById(R.id.os);
-                            TextView txt2 = new TextView(getApplicationContext());
-                            txt2.setText(textnya);
-                            txt2.setLayoutParams(txt1.getLayoutParams());
-                            txt2.setTextColor(txt1.getTextColors());
-
-                            Spinner sp1 = (Spinner) findViewById(R.id.spinnerWindows);
-                            Spinner sp2 = new Spinner(getApplicationContext());
-                            sp2.setLayoutParams(sp1.getLayoutParams());
-                            sp2.setAdapter(sp1.getAdapter());
-                            spinnerTambahan.add(sp2);
-
-                            container.addView(txt2);
-                            container.addView(sp2);
+                            addNewJenis(textnya);
                         }catch (Exception e){
                             e.printStackTrace();
                         }
@@ -147,6 +183,53 @@ public class HalamanDetail extends AppCompatActivity {
             }
         });
     }
+
+    private void addNewJenis(String jenis){
+        this.addNewJenis(jenis,null);
+    }
+
+    private void addNewJenis(String jenis, JSONArray elemen){
+        String textnya = jenis;
+        tambahan.add(textnya);
+        LinearLayout container = (LinearLayout) findViewById(R.id.Tambahable);
+
+        TextView txt1 = (TextView) findViewById(R.id.os);
+        TextView txt2 = new TextView(getApplicationContext());
+        txt2.setText(textnya);
+        txt2.setLayoutParams(txt1.getLayoutParams());
+        txt2.setTextColor(txt1.getTextColors());
+
+        Spinner sp1 = (Spinner) findViewById(R.id.spinnerWindows);
+        Spinner sp2 = new Spinner(getApplicationContext());
+        sp2.setLayoutParams(sp1.getLayoutParams());
+
+        //set isi spinner SP2 kalau elemen nggak null
+        if(elemen != null){
+            try {
+                List<String> opsi = new ArrayList<String>();
+                for (int j = 0; j < elemen.length(); j++) {
+                    opsi.add(elemen.getJSONObject(j).getInt("skor") + ". " + elemen.getJSONObject(j).getString("keterangan"));
+                }
+                String options[] = new String[opsi.size()];
+                opsi.toArray(options);
+
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, options);
+                spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                sp2.setAdapter(spinnerArrayAdapter);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }else{
+            sp2.setAdapter(sp1.getAdapter());
+        }
+
+        spinnerTambahan.add(sp2);
+
+        container.addView(txt2);
+        container.addView(sp2);
+    }
+
+
 
     class HalamanDetailTask extends AsyncTask<String, Void, JSONObject> {
 
@@ -173,10 +256,12 @@ public class HalamanDetail extends AppCompatActivity {
             String userId = urls[0];
             String barcode = urls[1];
             String isiLaporan = urls[2];
+            String lokasi = urls[3];
 
             Uri.Builder builder = new Uri.Builder()
                     .appendQueryParameter("userId", userId)
                     .appendQueryParameter("barcode", barcode)
+                    .appendQueryParameter("lokasi", lokasi)
                     .appendQueryParameter("isiLaporan", isiLaporan);
             String query = builder.build().getEncodedQuery();
 
