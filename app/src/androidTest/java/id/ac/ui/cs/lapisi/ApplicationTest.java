@@ -1,4 +1,4 @@
-package id.ac.ui.cs.inventarisfasilkom;
+package id.ac.ui.cs.lapisi;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

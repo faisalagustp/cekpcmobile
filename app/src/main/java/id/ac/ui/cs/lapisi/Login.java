@@ -1,4 +1,4 @@
-package id.ac.ui.cs.inventarisfasilkom;
+package id.ac.ui.cs.lapisi;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,24 +7,15 @@ import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Button;
-import id.ac.ui.cs.inventarisfasilkom.NetworkHelper;
-
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 public class Login extends AppCompatActivity {
 
@@ -35,10 +26,10 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(id.ac.ui.cs.lapisi.R.layout.login);
         context = getApplicationContext();
-        tvUsername = (TextView) findViewById(R.id.username);
-        tvPassword = (TextView) findViewById(R.id.password);
+        tvUsername = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.username);
+        tvPassword = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.password);
 
         pref = getApplicationContext().getSharedPreferences("login", 0);
 
@@ -48,7 +39,7 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
         }
 
-        Button signin = (Button) findViewById(R.id.signin);
+        Button signin = (Button) findViewById(id.ac.ui.cs.lapisi.R.id.signin);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

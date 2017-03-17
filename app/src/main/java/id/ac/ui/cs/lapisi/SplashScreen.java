@@ -1,4 +1,4 @@
-package id.ac.ui.cs.inventarisfasilkom;
+package id.ac.ui.cs.lapisi;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,7 @@ public class SplashScreen extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+        setContentView(id.ac.ui.cs.lapisi.R.layout.splash);
 
         Thread timerThread = new Thread(){
             public void run(){

@@ -17,13 +17,13 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="17dp"
-        android:text="Silakan scan barcode inventaris anda dengan tap pada tombol kamera dibawah, atau dengan mengisikan kode PC pada kolom dibawah" />
+        android:text="Silakan scan barcode PC anda dengan tap pada tombol kamera dibawah, atau dengan mengisikan kode PC pada kolom dibawah" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Scan Barcode Inventaris"
+        android:text="Scan Barcode PC"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

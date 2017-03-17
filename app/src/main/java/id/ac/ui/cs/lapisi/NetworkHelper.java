@@ -1,4 +1,4 @@
-package id.ac.ui.cs.inventarisfasilkom;
+package id.ac.ui.cs.lapisi;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

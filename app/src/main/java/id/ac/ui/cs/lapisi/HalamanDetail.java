@@ -1,4 +1,4 @@
-package id.ac.ui.cs.inventarisfasilkom;
+package id.ac.ui.cs.lapisi;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,17 +7,12 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -25,10 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Button;
-
-import com.google.zxing.common.StringUtils;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,19 +37,19 @@ public class HalamanDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.detil_barcode);
+        setContentView(id.ac.ui.cs.lapisi.R.layout.detil_barcode);
         tambahan = new ArrayList<String>();
         spinnerTambahan = new ArrayList<Spinner>();
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
 
         pref = getApplicationContext().getSharedPreferences("login", 0);
         this.context = getApplicationContext();
 
         Intent myIntent = getIntent();
-        TextView tv = (TextView) findViewById(R.id.barcode);
+        TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.barcode);
         tv.setText(myIntent.getStringExtra("barcodeNumber"));
-        tv = (TextView) findViewById(R.id.nama_inventaris);
+        tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.nama_inventaris);
         tv.setText(myIntent.getStringExtra("namaInventaris") + "("+myIntent.getStringExtra("jenisInventaris")+")");
         try {
             JSONArray arrayLokasi = new JSONArray(myIntent.getStringExtra("pilihanLokasi"));
@@ -74,7 +65,7 @@ public class HalamanDetail extends AppCompatActivity {
             String pilihanLokasi[] = new String[opsi.size()];
             opsi.toArray(pilihanLokasi);
 
-            Spinner sp = (Spinner) findViewById(R.id.lokasi);
+            Spinner sp = (Spinner) findViewById(id.ac.ui.cs.lapisi.R.id.lokasi);
             ArrayAdapter<String> spinnerArrayAdapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pilihanLokasi);
             spinnerArrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
             sp.setAdapter(spinnerArrayAdapter1);
@@ -113,13 +104,13 @@ public class HalamanDetail extends AppCompatActivity {
         }
 
 
-        Button laporkan = (Button) findViewById(R.id.laporkan);
-        final Spinner lokasi = (Spinner) findViewById(R.id.lokasi);
+        Button laporkan = (Button) findViewById(id.ac.ui.cs.lapisi.R.id.laporkan);
+        final Spinner lokasi = (Spinner) findViewById(id.ac.ui.cs.lapisi.R.id.lokasi);
         laporkan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String[] param = new String[4];
-                TextView tv = (TextView) findViewById(R.id.barcode);
+                TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.barcode);
                 if(pref.getInt("userId",0) != 0){
                     param[0] = Integer.toString(pref.getInt("userId",0));
                     param[1] = tv.getText().toString();
@@ -157,7 +148,7 @@ public class HalamanDetail extends AppCompatActivity {
         });
 
 
-        Button tambah = (Button) findViewById(R.id.tambah);
+        Button tambah = (Button) findViewById(id.ac.ui.cs.lapisi.R.id.tambah);
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -191,15 +182,15 @@ public class HalamanDetail extends AppCompatActivity {
     private void addNewJenis(String jenis, JSONArray elemen){
         String textnya = jenis;
         tambahan.add(textnya);
-        LinearLayout container = (LinearLayout) findViewById(R.id.Tambahable);
+        LinearLayout container = (LinearLayout) findViewById(id.ac.ui.cs.lapisi.R.id.Tambahable);
 
-        TextView txt1 = (TextView) findViewById(R.id.os);
+        TextView txt1 = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.os);
         TextView txt2 = new TextView(getApplicationContext());
         txt2.setText(textnya);
         txt2.setLayoutParams(txt1.getLayoutParams());
         txt2.setTextColor(txt1.getTextColors());
 
-        Spinner sp1 = (Spinner) findViewById(R.id.spinnerWindows);
+        Spinner sp1 = (Spinner) findViewById(id.ac.ui.cs.lapisi.R.id.spinnerWindows);
         Spinner sp2 = new Spinner(getApplicationContext());
         sp2.setLayoutParams(sp1.getLayoutParams());
 

@@ -1,14 +1,12 @@
-package id.ac.ui.cs.inventarisfasilkom;
+package id.ac.ui.cs.lapisi;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -32,8 +30,8 @@ public class HalamanUtama extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_halaman_utama);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(id.ac.ui.cs.lapisi.R.layout.activity_halaman_utama);
+        Toolbar toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
         setSupportActionBar(toolbar);
         pref = getApplicationContext().getSharedPreferences("login", 0);
 
@@ -43,7 +41,7 @@ public class HalamanUtama extends AppCompatActivity {
             startActivity(intent);
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(id.ac.ui.cs.lapisi.R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,13 +54,13 @@ public class HalamanUtama extends AppCompatActivity {
             }
         });
 
-        Button tombol = (Button) findViewById(R.id.tombolCari);
+        Button tombol = (Button) findViewById(id.ac.ui.cs.lapisi.R.id.tombolCari);
         tombol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView tv = (TextView) findViewById(R.id.errorMessage);
+                TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.errorMessage);
                 tv.setText("");
-                EditText barcode = (EditText) findViewById(R.id.barcodeET);
+                EditText barcode = (EditText) findViewById(id.ac.ui.cs.lapisi.R.id.barcodeET);
                 String[] input = new String[1];
                 input[0] = barcode.getText().toString();
                 new HalamanUtamaTask(getApplicationContext()).execute(input);
@@ -75,16 +73,16 @@ public class HalamanUtama extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
             if(result.getContents() == null) {
-                TextView tv = (TextView) findViewById(R.id.errorMessage);
+                TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.errorMessage);
                 tv.setText("Barcode tidak terbaca. Silakan scan kembali");
             } else {
                 //cek di API, barcode ada atau nggak
                 Context context = getApplicationContext();
                 String[] input = new String[1];
                 input[0] = result.getContents();
-                EditText et = (EditText) findViewById(R.id.barcodeET);
+                EditText et = (EditText) findViewById(id.ac.ui.cs.lapisi.R.id.barcodeET);
                 et.setText(result.getContents());
-                TextView tv = (TextView) findViewById(R.id.errorMessage);
+                TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.errorMessage);
                 tv.setText("");
                 new HalamanUtamaTask(context).execute(input);
             }
@@ -96,7 +94,7 @@ public class HalamanUtama extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_halaman_utama, menu);
+        getMenuInflater().inflate(id.ac.ui.cs.lapisi.R.menu.menu_halaman_utama, menu);
         return true;
     }
 
@@ -105,10 +103,10 @@ public class HalamanUtama extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        int identity = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_logout) {
+        if (identity == id.ac.ui.cs.lapisi.R.id.action_logout) {
             Editor editor = pref.edit();
             editor.clear();
             editor.commit();
@@ -156,7 +154,7 @@ public class HalamanUtama extends AppCompatActivity {
 
         protected void onPostExecute(JSONObject hasil) {
             loadingMessage.dismiss();
-            TextView tv = (TextView) findViewById(R.id.errorMessage);
+            TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.errorMessage);
             if(hasil == null){
                 tv.setText("Barcode tidak dikenali oleh sistem.");
             }else{
