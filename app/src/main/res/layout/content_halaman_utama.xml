@@ -17,7 +17,16 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="17dp"
-        android:text="Silakan scan barcode PC anda dengan tap pada tombol kamera dibawah, atau dengan mengisikan kode PC pada kolom dibawah" />
+        android:text="Silakan scan barcode PC anda dengan tap pada tombol kamera dibawah ini"
+        android:textColor="@android:color/background_dark" />
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@android:drawable/ic_menu_camera"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/TopText"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,6 +39,16 @@
         android:layout_alignParentStart="true"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/textDeskripsi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tombolCari"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Atau dengan mengisikan kode PC pada kolom dibawah ini"
+        android:textColor="@android:color/background_dark" />
+
     <EditText
         android:id="@+id/barcodeET"
         android:layout_width="wrap_content"
@@ -37,14 +56,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/TopText"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
         android:inputType="number"
         android:layout_toStartOf="@+id/tombolCari" />
 
     <Button
         android:id="@+id/tombolCari"
-        style="@android:style/Widget.Material.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/barcodeET"
@@ -61,5 +79,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/barcodeET"
         android:layout_marginTop="13dp"
-        android:textColor="@android:color/holo_red_dark" />
+        android:textColor="@color/colorAccent"
+    />
+
 </RelativeLayout>

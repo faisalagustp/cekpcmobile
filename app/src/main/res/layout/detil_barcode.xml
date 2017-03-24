@@ -141,13 +141,22 @@
                 android:spinnerMode="dialog"
                 android:entries="@array/spinnerWindows" />
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/os2"
+            android:text="Deskripsi Kerusakan"
+            android:id="@+id/deskripsi"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/isiDeskripsi"
+            android:hint="Isikan dengan deskripsi kerusakan yang ada."
             android:textColor="#000000" />
 
         <LinearLayout
@@ -161,6 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tambah Jenis"
+                android:visibility="gone"
                 android:id="@+id/tambah" />
 
             <Button

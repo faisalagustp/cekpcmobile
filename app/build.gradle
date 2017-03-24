@@ -8,8 +8,8 @@ android {
         applicationId "id.ac.ui.cs.inventarisfasilkom"
         minSdkVersion 10
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.3"
     }
     buildTypes {
         release {

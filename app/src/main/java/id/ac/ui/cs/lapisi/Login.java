@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.content.Intent;
 import android.widget.TextView;
@@ -30,6 +31,17 @@ public class Login extends AppCompatActivity {
         context = getApplicationContext();
         tvUsername = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.username);
         tvPassword = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.password);
+        tvUsername.setSingleLine(true);
+        final Button signin = (Button) findViewById(id.ac.ui.cs.lapisi.R.id.signin);
+
+        tvPassword.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if(keyCode == 66) {
+                    signin.performClick();
+                }
+                return false;
+            }
+        });
 
         pref = getApplicationContext().getSharedPreferences("login", 0);
 
@@ -39,7 +51,6 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
         }
 
-        Button signin = (Button) findViewById(id.ac.ui.cs.lapisi.R.id.signin);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
