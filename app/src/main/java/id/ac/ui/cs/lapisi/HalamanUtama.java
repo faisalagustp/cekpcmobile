@@ -63,7 +63,26 @@ public class HalamanUtama extends AppCompatActivity {
                 EditText barcode = (EditText) findViewById(id.ac.ui.cs.lapisi.R.id.barcodeET);
                 String[] input = new String[1];
                 input[0] = barcode.getText().toString();
-                new HalamanUtamaTask(getApplicationContext()).execute(input);
+                if (input[0].equals("")) {
+                    tv.setText("Barcode tidak boleh kosong");
+                    return;
+                }
+                else{
+                    new HalamanUtamaTask(getApplicationContext()).execute(input);
+                }
+            }
+        });
+
+        Button logout = (Button) findViewById(R.id.logoutButton);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Editor editor = pref.edit();
+                editor.clear();
+                editor.commit();
+                Intent intent = new Intent(getApplicationContext(),Login.class);
+                finish();
+                startActivity(intent);
             }
         });
     }
@@ -91,7 +110,7 @@ public class HalamanUtama extends AppCompatActivity {
         }
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(id.ac.ui.cs.lapisi.R.menu.menu_halaman_utama, menu);
@@ -117,7 +136,7 @@ public class HalamanUtama extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     class HalamanUtamaTask extends AsyncTask<String, Void, JSONObject> {
 

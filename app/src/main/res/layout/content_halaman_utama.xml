@@ -17,16 +17,26 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="17dp"
-        android:text="Silakan scan barcode PC anda dengan tap pada tombol kamera dibawah ini"
+        android:text="Silakan scan barcode PC anda dengan tap pada tombol kamera yang telah tersedia"
         android:textColor="@android:color/background_dark" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan disini"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/fab"
+        android:layout_alignStart="@+id/fab"
+        android:layout_marginBottom="58dp" />
 
     <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
         android:src="@android:drawable/ic_menu_camera"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/TopText"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/barcodeET"
+        android:layout_toEndOf="@+id/barcodeET" />
 
     <TextView
         android:layout_width="wrap_content"
