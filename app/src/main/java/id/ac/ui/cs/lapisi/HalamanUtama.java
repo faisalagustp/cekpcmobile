@@ -31,8 +31,10 @@ public class HalamanUtama extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(id.ac.ui.cs.lapisi.R.layout.activity_halaman_utama);
-        Toolbar toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        //Toolbar toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
+        //setSupportActionBar(toolbar);
+
         pref = getApplicationContext().getSharedPreferences("login", 0);
 
         if(pref.getInt("userId",0)==0){

@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -42,7 +43,7 @@ public class HalamanDetail extends AppCompatActivity {
         tambahan = new ArrayList<String>();
         spinnerTambahan = new ArrayList<Spinner>();
 
-        toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
+        //toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
 
         pref = getApplicationContext().getSharedPreferences("login", 0);
         this.context = getApplicationContext();
@@ -110,9 +111,12 @@ public class HalamanDetail extends AppCompatActivity {
         laporkan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] param = new String[5];
+                final View viewfinal = view;
+                final String[] param = new String[5];
                 TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.barcode);
                 EditText et = (EditText) findViewById(R.id.isiDeskripsi);
+
+
                 try {
                     if (pref.getInt("userId", 0) != 0) {
                         param[0] = Integer.toString(pref.getInt("userId", 0));
@@ -141,15 +145,32 @@ public class HalamanDetail extends AppCompatActivity {
                             i++;
                         }
 
-                        param[2] = param[2].substring(0, param[2].length() - 1);
-                        param[2] += "]";
+                            param[2] = param[2].substring(0, param[2].length() - 1);
+                            param[2] += "]";
 
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(HalamanDetail.this);
+                        dialog.setTitle("Laporkan");
+                        dialog.setMessage("Apakah Anda yakin?");
+                        //final EditText input = new EditText (HalamanDetail.this);
+                        //dialog.setView(input);
+                        //dialog.setIcon(android.R.drawable.ic_input_add);
 
-                        new HalamanDetailTask(context, view).execute(param);
+                        dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                new HalamanDetailTask(context, viewfinal).execute(param);
+                            }
+                        });
+                        dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
                     }
                 }catch (Exception e){
-
+                    e.printStackTrace();
                 }
+
             }
         });
 
@@ -195,6 +216,8 @@ public class HalamanDetail extends AppCompatActivity {
         txt2.setText(textnya);
         txt2.setLayoutParams(txt1.getLayoutParams());
         txt2.setTextColor(txt1.getTextColors());
+        txt2.setTypeface(txt1.getTypeface());
+
 
         Spinner sp1 = (Spinner) findViewById(id.ac.ui.cs.lapisi.R.id.spinnerWindows);
         Spinner sp2 = new Spinner(getApplicationContext());
