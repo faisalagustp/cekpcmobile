@@ -29,8 +29,7 @@
 
         <activity
             android:name=".HalamanUtama"
-            android:label="@string/label_halaman_utama"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/label_halaman_utama">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
