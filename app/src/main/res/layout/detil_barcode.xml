@@ -116,8 +116,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinnerKeyboard"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerKeyboard" />
+                android:spinnerMode="dropdown"
+                android:entries="@array/spinnerKeyboard"
+                android:gravity="fill"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHorizontalOffset="10sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -137,8 +140,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinnerMouse"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerMouse"/>
+                android:spinnerMode="dropdown"
+                android:entries="@array/spinnerMouse"
+                android:gravity="fill"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHorizontalOffset="10sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -158,8 +164,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinnerMonitor"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerMonitor" />
+                android:spinnerMode="dropdown"
+                android:entries="@array/spinnerMonitor"
+                android:gravity="fill"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHorizontalOffset="10sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -179,8 +188,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinnerWindows"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerWindows" />
+                android:spinnerMode="dropdown"
+                android:entries="@array/spinnerWindows"
+                android:gravity="fill"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHorizontalOffset="10sp"/>
         </LinearLayout>
 
         <TextView

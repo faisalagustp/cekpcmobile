@@ -71,6 +71,7 @@ public class HalamanDetail extends AppCompatActivity {
             ArrayAdapter<String> spinnerArrayAdapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pilihanLokasi);
             spinnerArrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
             sp.setAdapter(spinnerArrayAdapter1);
+            sp.setDropDownHorizontalOffset(10);
             sp.setSelection(indexTerpilih);
         }catch (Exception e){
             e.printStackTrace();
