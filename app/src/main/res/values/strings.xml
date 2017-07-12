@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Lapisi (Lapor PC) Fasilkom</string>
     <string name="action_logout">Log Out</string>
+    <string name="label_detail_pc">Detail PC</string>
+    <string name="label_halaman_utama">Lapor PC</string>
+
 </resources>

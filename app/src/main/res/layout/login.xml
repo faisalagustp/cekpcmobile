@@ -16,10 +16,12 @@
         android:layout_height="100dp"
         android:id="@+id/imageView"
         android:src="@drawable/logo_fasilkom"
-        android:layout_marginTop="103dp"
+        android:layout_marginTop="61dp"
+
         android:layout_below="@+id/tracker_container"
-        android:layout_alignLeft="@+id/signin"
-        android:layout_alignStart="@+id/signin" />
+        android:layout_alignRight="@+id/signin"
+        android:layout_alignEnd="@+id/signin" />
+
 
     <EditText
         android:id="@+id/username"
@@ -34,6 +36,7 @@
         android:layout_alignRight="@+id/password"
         android:layout_alignEnd="@+id/password" />
 
+
     <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
@@ -45,14 +48,15 @@
         android:layout_below="@+id/username"
         android:layout_centerHorizontal="true" />
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="SIGN IN"
         android:id="@+id/signin"
         style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_marginTop="34dp"
         android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp" />
+        android:layout_centerHorizontal="true"></Button>
 
 </RelativeLayout>
