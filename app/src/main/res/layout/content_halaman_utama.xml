@@ -18,7 +18,8 @@
         android:layout_below="@+id/textView2"
         android:layout_marginTop="17dp"
         android:text="Silakan scan barcode PC anda dengan tap pada tombol kamera dibawah ini"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"/>
 
     <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -29,7 +30,7 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Scan Barcode PC"
@@ -37,7 +38,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        />
 
     <TextView
         android:id="@+id/textDeskripsi"
@@ -47,7 +51,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:text="Atau dengan mengisikan kode PC pada kolom dibawah ini"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"/>
 
     <EditText
         android:id="@+id/barcodeET"
@@ -59,17 +64,21 @@
         android:layout_marginTop="150dp"
         android:ems="10"
         android:inputType="number"
-        android:layout_toStartOf="@+id/tombolCari" />
+        android:layout_toStartOf="@+id/tombolCari"
+        android:textSize="14sp"/>
 
     <Button
         android:id="@+id/tombolCari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="14sp"
         android:layout_alignBottom="@+id/barcodeET"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/barcodeET"
-        android:text="Cari" />
+        android:text="CARI"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/errorMessage"
@@ -80,6 +89,7 @@
         android:layout_below="@+id/barcodeET"
         android:layout_marginTop="13dp"
         android:textColor="@color/colorAccent"
+        android:textSize="14sp"
     />
 
 </RelativeLayout>

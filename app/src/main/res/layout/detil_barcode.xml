@@ -15,10 +15,16 @@
             android:weightSum="1">
 
             <TextView
+<<<<<<< HEAD
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
+=======
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:text="Detil PC"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -27,12 +33,28 @@
 
             <TextView
                 android:id="@+id/textView4"
+=======
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:background="@color/colorAccent"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                />
+<TextView
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
+<<<<<<< HEAD
                 android:text="Barcode"
                 android:textColor="#000000" />
+=======
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
             <TextView
                 android:id="@+id/barcode"
@@ -40,17 +62,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
+<<<<<<< HEAD
                 android:text="102120192"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
+                android:textSize="14sp"/>
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:text="Nama/Jenis PC"
+=======
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
+
 
             <TextView
                 android:id="@+id/nama_inventaris"
@@ -58,17 +92,31 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
+<<<<<<< HEAD
                 android:text="Personal Computer"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
+                android:textSize="14sp"/>
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
             <TextView
                 android:id="@+id/textViewLokasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:text="Lokasi"
+=======
+
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
+
 
             <Spinner
                 android:id="@+id/lokasi"
@@ -76,18 +124,31 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
+<<<<<<< HEAD
                 android:text="Lab XXI Depok"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30sp" />
+=======
+                />
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:text="Status Keyboard"
+=======
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
+
 
 
             <Spinner
@@ -102,9 +163,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:text="Status Mouse"
+=======
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
+
 
             <Spinner
                 android:id="@+id/spinnerMouse"
@@ -118,9 +188,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:text="Status Monitor"
+=======
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
+
 
             <Spinner
                 android:id="@+id/spinnerMonitor"
@@ -134,9 +213,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:text="Status Windows"
+=======
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
+
 
             <Spinner
                 android:id="@+id/spinnerWindows"
@@ -152,38 +240,52 @@
             android:text="Deskripsi Kerusakan"
             android:id="@+id/deskripsi"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+
+            android:textSize="14sp"
+            android:textStyle="bold"
+
+            android:layout_marginTop="35dp"
             android:textColor="#000000" />
 
+
         <EditText
+            android:id="@+id/isiDeskripsi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/isiDeskripsi"
             android:hint="Isikan dengan deskripsi kerusakan yang ada."
-            android:textColor="#000000" />
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
 
             <Button
                 style="@style/Base.Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tambah Jenis"
+                android:text="TAMBAH JENIS"
                 android:visibility="gone"
-                android:id="@+id/tambah" />
+                android:id="@+id/tambah"
+                android:textSize="14sp"/>
 
             <Button
+                android:id="@+id/laporkan"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Laporkan"
-                android:id="@+id/laporkan"
+                android:text="LAPORKAN"
+
                 android:layout_gravity="center_horizontal"
-                style="@style/Base.Widget.AppCompat.Button.Colored" />
+                android:textSize="14sp"
+
+
+                />
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

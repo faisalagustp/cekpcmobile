@@ -26,6 +26,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Login Aplikasi Pelaporan PC"
         android:id="@+id/textView"
+        android:textSize="20sp"
         android:autoText="false"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/imageView"
@@ -43,13 +44,14 @@
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:textSize="36px"
+        android:textSize="14sp"
         android:textIsSelectable="false" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/username"
+        android:textSize="14sp"
         android:nextFocusForward="@+id/password"
         android:layout_below="@+id/textView14"
         android:layout_alignLeft="@+id/textView14"
@@ -65,7 +67,7 @@
         android:id="@+id/textView15"
         android:autoText="false"
         android:textStyle="bold"
-        android:textSize="36px"
+        android:textSize="14sp"
         android:textIsSelectable="false"
         android:layout_below="@+id/username"
         android:layout_alignLeft="@+id/username"
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
+        android:textSize="14sp"
         android:id="@+id/password"
         android:layout_below="@+id/textView15"
         android:layout_alignLeft="@+id/textView15"
@@ -87,8 +90,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="SIGN IN"
         android:id="@+id/signin"
+
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
         style="@style/Base.Widget.AppCompat.Button.Colored"/>
