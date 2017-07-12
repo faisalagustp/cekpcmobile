@@ -6,8 +6,12 @@ buildscript {
     }
     dependencies {
 <<<<<<< HEAD
+<<<<<<< HEAD
         classpath 'com.android.tools.build:gradle:2.3.2'
 =======
+=======
+
+>>>>>>> 3e60a0cf958c4693fa103a19e2fe8983b9b0b776
         classpath 'com.android.tools.build:gradle:2.3.3'
 >>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
@@ -25,4 +29,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
