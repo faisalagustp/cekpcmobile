@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/InventarisFasilkom.iml" filepath="$PROJECT_DIR$/InventarisFasilkom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lapisi.iml" filepath="$PROJECT_DIR$/Lapisi.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
