@@ -19,24 +19,27 @@
         android:layout_marginTop="17dp"
         android:text="Silakan scan barcode PC anda dengan tap pada tombol kamera yang telah tersedia"
         android:textColor="@android:color/background_dark" />
+
     <TextView
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scan disini"
+        android:layout_marginBottom="60dp"
+        android:text="Scan     Disini"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/fab"
-        android:layout_alignStart="@+id/fab"
-        android:layout_marginBottom="58dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:src="@android:drawable/ic_menu_camera"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
+        android:foreground="@drawable/custom_selector"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/barcodeET"
-        android:layout_toEndOf="@+id/barcodeET" />
+        android:layout_alignParentEnd="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,23 +56,21 @@
         android:id="@+id/textDeskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tombolCari"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:text="Atau dengan mengisikan kode PC pada kolom dibawah ini"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/TopText"/>
 
     <EditText
         android:id="@+id/barcodeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/TopText"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="number"
-        android:layout_toStartOf="@+id/tombolCari" />
+        android:layout_below="@+id/textDeskripsi"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/tombolCari"
