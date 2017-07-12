@@ -16,7 +16,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.content.Intent;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Button;
 
 import org.json.JSONObject;
