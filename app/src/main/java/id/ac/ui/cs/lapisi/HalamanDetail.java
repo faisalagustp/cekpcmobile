@@ -42,7 +42,7 @@ public class HalamanDetail extends AppCompatActivity {
         tambahan = new ArrayList<String>();
         spinnerTambahan = new ArrayList<Spinner>();
 
-        toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
+        //toolbar = (Toolbar) findViewById(id.ac.ui.cs.lapisi.R.id.toolbar);
 
         pref = getApplicationContext().getSharedPreferences("login", 0);
         this.context = getApplicationContext();
