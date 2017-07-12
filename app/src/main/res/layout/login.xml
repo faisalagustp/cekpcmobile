@@ -16,81 +16,43 @@
         android:layout_height="100dp"
         android:id="@+id/imageView"
         android:src="@drawable/logo_fasilkom"
+        android:layout_marginTop="103dp"
         android:layout_below="@+id/tracker_container"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Login Aplikasi Pelaporan PC"
-        android:id="@+id/textView"
-        android:autoText="false"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username"
-        android:id="@+id/textView14"
-        android:autoText="false"
-        android:textStyle="bold"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:textSize="36px"
-        android:textIsSelectable="false" />
+        android:layout_alignLeft="@+id/signin"
+        android:layout_alignStart="@+id/signin" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/username"
-        android:nextFocusForward="@+id/password"
-        android:layout_below="@+id/textView14"
-        android:layout_alignLeft="@+id/textView14"
-        android:layout_alignStart="@+id/textView14"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Password"
-        android:id="@+id/textView15"
-        android:autoText="false"
-        android:textStyle="bold"
-        android:textSize="36px"
-        android:textIsSelectable="false"
-        android:layout_below="@+id/username"
-        android:layout_alignLeft="@+id/username"
-        android:layout_alignStart="@+id/username"
-        android:maxLines="1"/>
+        android:layout_marginTop="46dp"
+        android:hint="Username"
+        android:nextFocusForward="@+id/password"
+        android:layout_below="@+id/imageView"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_alignEnd="@+id/password" />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/password"
-        android:layout_below="@+id/textView15"
-        android:layout_alignLeft="@+id/textView15"
-        android:layout_alignStart="@+id/textView15"
-        android:layout_alignRight="@+id/username"
-        android:layout_alignEnd="@+id/username" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
         android:id="@+id/signin"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
-        style="@style/Base.Widget.AppCompat.Button.Colored"/>
+        android:layout_marginTop="26dp" />
 
 </RelativeLayout>
