@@ -2,7 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
+<<<<<<< HEAD
+<<<<<<< HEAD
+    buildToolsVersion '25.0.0'
+=======
+=======
+
+>>>>>>> 3e60a0cf958c4693fa103a19e2fe8983b9b0b776
     buildToolsVersion '26'
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
     defaultConfig {
         applicationId "id.ac.ui.cs.inventarisfasilkom"

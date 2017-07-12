@@ -111,51 +111,64 @@ public class HalamanDetail extends AppCompatActivity {
         laporkan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] param = new String[5];
+                final View viewfinal = view;
+                final String[] param = new String[5];
                 TextView tv = (TextView) findViewById(id.ac.ui.cs.lapisi.R.id.barcode);
                 EditText et = (EditText) findViewById(R.id.isiDeskripsi);
-                if(!et.getText().toString().equals("")){
-                    try {
-                        if (pref.getInt("userId", 0) != 0) {
-                            param[0] = Integer.toString(pref.getInt("userId", 0));
-                            param[1] = tv.getText().toString();
-                            param[3] = lokasi.getSelectedItem().toString();
-                            param[4] = et.getText().toString();
-                            param[2] = "[";
 
-                            String[] target = {"Keyboard", "Mouse", "Monitor", "Windows"};
-                            for (String jenis : target) {
-                                int resID = getResources().getIdentifier("spinner" + jenis, "id", getPackageName());
-                                Spinner sp = (Spinner) findViewById(resID);
-                                String isi = sp.getSelectedItem().toString();
-                                param[2] += "{ \"jenis\" : \"" + jenis + "\" ,";
-                                param[2] += " \"skor\" : " + isi.charAt(0) + " ,";
-                                param[2] += " \"deskripsi\" : \"" + isi.substring(3) + "\" },";
-                            }
-                            //buat tambahan
-                            int i = 0;
-                            for (String tambah : tambahan) {
-                                Spinner sp = spinnerTambahan.get(i);
-                                String isi = sp.getSelectedItem().toString();
-                                param[2] += "{ \"jenis\" : \"" + tambah + "\" ,";
-                                param[2] += " \"skor\" : " + isi.charAt(0) + " ,";
-                                param[2] += " \"deskripsi\" : \"" + isi.substring(3) + "\" },";
-                                i++;
-                            }
+
+                try {
+                    if (pref.getInt("userId", 0) != 0) {
+                        param[0] = Integer.toString(pref.getInt("userId", 0));
+                        param[1] = tv.getText().toString();
+                        param[3] = lokasi.getSelectedItem().toString();
+                        param[4] = et.getText().toString();
+                        param[2] = "[";
+
+                        String[] target = {"Keyboard", "Mouse", "Monitor", "Windows"};
+                        for (String jenis : target) {
+                            int resID = getResources().getIdentifier("spinner" + jenis, "id", getPackageName());
+                            Spinner sp = (Spinner) findViewById(resID);
+                            String isi = sp.getSelectedItem().toString();
+                            param[2] += "{ \"jenis\" : \"" + jenis + "\" ,";
+                            param[2] += " \"skor\" : " + isi.charAt(0) + " ,";
+                            param[2] += " \"deskripsi\" : \"" + isi.substring(3) + "\" },";
+                        }
+                        //buat tambahan
+                        int i = 0;
+                        for (String tambah : tambahan) {
+                            Spinner sp = spinnerTambahan.get(i);
+                            String isi = sp.getSelectedItem().toString();
+                            param[2] += "{ \"jenis\" : \"" + tambah + "\" ,";
+                            param[2] += " \"skor\" : " + isi.charAt(0) + " ,";
+                            param[2] += " \"deskripsi\" : \"" + isi.substring(3) + "\" },";
+                            i++;
+                        }
 
                             param[2] = param[2].substring(0, param[2].length() - 1);
                             param[2] += "]";
 
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(HalamanDetail.this);
+                        dialog.setTitle("Laporkan");
+                        dialog.setMessage("Apakah Anda yakin?");
+                        //final EditText input = new EditText (HalamanDetail.this);
+                        //dialog.setView(input);
+                        //dialog.setIcon(android.R.drawable.ic_input_add);
 
-                            new HalamanDetailTask(context, view).execute(param);
-                        }
-                    }catch (Exception e){
-
+                        dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                new HalamanDetailTask(context, viewfinal).execute(param);
+                            }
+                        });
+                        dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
                     }
-                }
-                else{
-                    Snackbar.make(view, "Deskripsi Laporan tidak boleh kosong.", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).setDuration(Snackbar.LENGTH_LONG).show();
+                }catch (Exception e){
+                    e.printStackTrace();
                 }
 
             }

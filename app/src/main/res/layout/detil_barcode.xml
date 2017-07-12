@@ -6,20 +6,34 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1">
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="match_parent"
+
+        <LinearLayout
             android:id="@+id/Tambahable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:weightSum="1">
 
             <TextView
+<<<<<<< HEAD
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+=======
                 android:layout_width="match_parent"
                 android:textAlignment="center"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Detil PC"
-                android:id="@+id/textView3"
                 android:layout_gravity="center_horizontal"
+<<<<<<< HEAD
+                android:layout_marginTop="20dp"
+                android:text="Detil PC"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:background="@drawable/border"/>
+
+            <TextView
+                android:id="@+id/textView4"
+=======
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:textColor="#fff"
@@ -28,159 +42,196 @@
                 android:paddingTop="20dp"
                 />
 <TextView
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Barcode"
-                android:id="@+id/textView4"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
+<<<<<<< HEAD
+                android:text="Barcode"
+                android:textColor="#000000" />
+=======
                 android:textColor="#000000"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="102120192"
                 android:id="@+id/barcode"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:textSize="14sp"/>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama/Jenis PC"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+<<<<<<< HEAD
+                android:text="102120192"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
+                android:textSize="14sp"/>
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
+
+            <TextView
                 android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
+                android:layout_marginTop="20dp"
+                android:text="Nama/Jenis PC"
+=======
 
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Personal Computer"
                 android:id="@+id/nama_inventaris"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
+<<<<<<< HEAD
+                android:text="Personal Computer"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+=======
                 android:textSize="14sp"/>
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
             <TextView
+                android:id="@+id/textViewLokasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lokasi"
-                android:id="@+id/textViewLokasi"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
+                android:layout_marginTop="20dp"
+                android:text="Lokasi"
+=======
 
 
                 android:textSize="14sp"
                 android:textStyle="bold"
 
                 android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
 
 
             <Spinner
+                android:id="@+id/lokasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Lab XXI Depok"
-                android:id="@+id/lokasi"
-                android:textSize="30sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
+<<<<<<< HEAD
+                android:text="Lab XXI Depok"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30sp" />
+=======
                 />
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status Keyboard"
                 android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
+                android:layout_marginTop="20dp"
+                android:text="Status Keyboard"
+=======
 
                 android:textSize="14sp"
                 android:textStyle="bold"
 
                 android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
 
 
 
             <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/spinnerKeyboard"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerKeyboard" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/spinnerKeyboard"
+                android:spinnerMode="dialog" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status Mouse"
                 android:id="@+id/mouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
+                android:layout_marginTop="20dp"
+                android:text="Status Mouse"
+=======
 
                 android:textSize="14sp"
                 android:textStyle="bold"
 
                 android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
 
 
             <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/spinnerMouse"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerMouse"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/spinnerMouse"
+                android:spinnerMode="dialog" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status Monitor"
                 android:id="@+id/textView8"
-                android:layout_marginLeft="20dp"
-
-                android:textSize="14sp"
-                android:textStyle="bold"
-
-                android:layout_marginTop="35dp"
-                android:textColor="#000000" />
-
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinnerMonitor"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerMonitor" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Status Windows"
-                android:id="@+id/os"
                 android:layout_marginLeft="20dp"
+<<<<<<< HEAD
+                android:layout_marginTop="20dp"
+                android:text="Status Monitor"
+=======
 
                 android:textSize="14sp"
                 android:textStyle="bold"
 
                 android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
                 android:textColor="#000000" />
 
 
             <Spinner
+                android:id="@+id/spinnerMonitor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:entries="@array/spinnerMonitor"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:id="@+id/os"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+<<<<<<< HEAD
+                android:layout_marginTop="20dp"
+                android:text="Status Windows"
+=======
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+
+                android:layout_marginTop="35dp"
+>>>>>>> effe9c1678cbe8588bd741eff841a127f97ea789
+                android:textColor="#000000" />
+
+
+            <Spinner
                 android:id="@+id/spinnerWindows"
-                android:spinnerMode="dialog"
-                android:entries="@array/spinnerWindows" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/spinnerWindows"
+                android:spinnerMode="dialog" />
         </LinearLayout>
 
         <TextView
