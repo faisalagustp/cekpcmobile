@@ -37,7 +37,7 @@
                 android:text="Nama/Jenis PC"
                 android:id="@+id/textView5"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="35dp"
                 android:textColor="#000000" />
 
             <TextView
@@ -55,7 +55,7 @@
                 android:text="Lokasi"
                 android:id="@+id/textViewLokasi"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="35dp"
                 android:textColor="#000000" />
 
             <Spinner
@@ -74,7 +74,7 @@
                 android:text="Status Keyboard"
                 android:id="@+id/textView6"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="35dp"
                 android:textColor="#000000" />
 
 
@@ -91,7 +91,7 @@
                 android:text="Status Mouse"
                 android:id="@+id/mouse"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="35dp"
                 android:textColor="#000000" />
 
             <Spinner
@@ -107,7 +107,7 @@
                 android:text="Status Monitor"
                 android:id="@+id/textView8"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="35dp"
                 android:textColor="#000000" />
 
             <Spinner
@@ -123,7 +123,7 @@
                 android:text="Status Windows"
                 android:id="@+id/os"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="35dp"
                 android:textColor="#000000" />
 
             <Spinner
@@ -140,7 +140,7 @@
             android:text="Deskripsi Kerusakan"
             android:id="@+id/deskripsi"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="35dp"
             android:textColor="#000000" />
 
         <EditText
@@ -155,7 +155,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
 
             <Button
                 style="@style/Base.Widget.AppCompat.Button.Colored"
@@ -166,12 +167,12 @@
                 android:id="@+id/tambah" />
 
             <Button
+                android:id="@+id/laporkan"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Laporkan"
-                android:id="@+id/laporkan"
                 android:layout_gravity="center_horizontal"
-                style="@style/Base.Widget.AppCompat.Button.Colored" />
+                android:text="Laporkan" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
