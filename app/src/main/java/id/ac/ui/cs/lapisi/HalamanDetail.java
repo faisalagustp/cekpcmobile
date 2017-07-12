@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -202,6 +203,8 @@ public class HalamanDetail extends AppCompatActivity {
         txt2.setText(textnya);
         txt2.setLayoutParams(txt1.getLayoutParams());
         txt2.setTextColor(txt1.getTextColors());
+        txt2.setTypeface(txt1.getTypeface());
+
 
         Spinner sp1 = (Spinner) findViewById(id.ac.ui.cs.lapisi.R.id.spinnerWindows);
         Spinner sp2 = new Spinner(getApplicationContext());
