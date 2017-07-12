@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="spinnerMouse">
-        <item>4. Normal, Lancar</item>
-        <item>3. Ada tombol yang macet (dapat respon)</item>
-        <item>2. Macet, ada tombol yang tidak respon</item>
-        <item>1. Tidak respons/rusak</item>
-        <item>0. Tidak bisa diperiksa</item>
+        <item>4| Normal, Lancar</item>
+        <item>3| Ada tombol yang macet (dapat respon)</item>
+        <item>2| Macet, ada tombol yang tidak respon</item>
+        <item>1| Tidak respons/rusak</item>
+        <item>0| Tidak bisa diperiksa</item>
     </string-array>
     <string-array name="spinnerKeyboard">
-        <item>4. Lancar, seluruh button respon</item>
-        <item>3. Lancar, ada 1/beberapa key macet</item>
-        <item>2. Ada key yang tidak respon</item>
-        <item>1. Tidak respon/rusak</item>
-        <item>0. Tidak bisa diperiksa</item>
+        <item>4| Lancar, seluruh button respon</item>
+        <item>3| Lancar, ada 1/beberapa key macet</item>
+        <item>2| Ada key yang tidak respon</item>
+        <item>1| Tidak respon/rusak</item>
+        <item>0| Tidak bisa diperiksa</item>
     </string-array>
     <string-array name="spinnerMonitor">
-        <item>4. Normal, tidak ada bercik</item>
-        <item>3. Normal, ada beberapa bercik</item>
-        <item>2. Ada bagian yang bermasalah</item>
-        <item>1. Tidak respon/rusak</item>
-        <item>0. Tidak bisa diperiksa</item>
+        <item>4| Normal, tidak ada bercik</item>
+        <item>3| Normal, ada beberapa bercik</item>
+        <item>2| Ada bagian yang bermasalah</item>
+        <item>1| Tidak respon/rusak</item>
+        <item>0| Tidak bisa diperiksa</item>
     </string-array>
     <string-array name="spinnerWindows">
-        <item>4. Dapat login, activated</item>
-        <item>3. Dapat login, not activated</item>
-        <item>2. Login error</item>
-        <item>1. Blue Screen</item>
-        <item>0. Tidak bisa diperiksa</item>
+        <item>4| Dapat login, activated</item>
+        <item>3| Dapat login, not activated</item>
+        <item>2| Login error</item>
+        <item>1| Blue Screen</item>
+        <item>0| Tidak bisa diperiksa</item>
     </string-array>
 </resources>

@@ -90,7 +90,7 @@ public class HalamanDetail extends AppCompatActivity {
                     Spinner sp1 = (Spinner) findViewById(resID);
                     List<String> opsi = new ArrayList<String>();
                     for(int j=0; j<item.length();j++){
-                        opsi.add(item.getJSONObject(j).getInt("skor") + ". " + item.getJSONObject(j).getString("keterangan"));
+                        opsi.add(item.getJSONObject(j).getInt("skor") + " | " + item.getJSONObject(j).getString("keterangan"));
                     }
                     String options[] = new String[ opsi.size() ];
                     opsi.toArray( options );
@@ -205,7 +205,7 @@ public class HalamanDetail extends AppCompatActivity {
             try {
                 List<String> opsi = new ArrayList<String>();
                 for (int j = 0; j < elemen.length(); j++) {
-                    opsi.add(elemen.getJSONObject(j).getInt("skor") + ". " + elemen.getJSONObject(j).getString("keterangan"));
+                    opsi.add(elemen.getJSONObject(j).getInt("skor") + " | " + elemen.getJSONObject(j).getString("keterangan"));
                 }
                 String options[] = new String[opsi.size()];
                 opsi.toArray(options);
